@@ -1,21 +1,39 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "App that allows Prixers and Prixelart to manage arts and services, being able to showcasing, promote and sale.",
+  "main": "start.js",
   "scripts": {
-    "lint": "eslint .",
-    "serve": "firebase emulators:start --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "start": "node start.js",
+    "dev": "nodemon start.js",
+    "test": "jest --runInBand"
   },
-  "engines": {
-    "node": "16"
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ],
+    "testEnvironment": "node",
+    "testTimeout": 90000
   },
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CapuzR/prixelart-be.git"
+  },
+  "keywords": [
+    "prixer",
+    "prix",
+    "prixelart"
+  ],
+  "author": "Ricardo Jesús Capuz Lárez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CapuzR/prixelart-be/issues"
+  },
+  "homepage": "https://github.com/CapuzR/prixelart-be#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.4.4",
-    "aws-sdk": "^2.1267.0",
+    "aws-sdk": "^2.907.0",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -23,8 +41,6 @@
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.1.0",
     "helmet": "^4.6.0",
     "jimp": "^0.16.1",
     "jsonwebtoken": "^8.5.1",
@@ -40,9 +56,9 @@
     "utf8": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.9.0",
-    "eslint-config-google": "^0.14.0",
-    "firebase-functions-test": "^0.2.0"
-  },
-  "private": true
+    "@types/underscore.string": "^0.0.38",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.1.3"
+  }
 }
